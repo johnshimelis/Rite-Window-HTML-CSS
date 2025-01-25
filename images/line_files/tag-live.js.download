@@ -1,0 +1,125 @@
+(function(networkId) {
+var automaticIntegrations = {"googleAnalytics":{"paramName":"g_cid"}};
+
+var cacheLifetimeDays = 30;
+
+var customDataWaitForConfig = [
+  { on: function() { return Invoca.Client.parseCustomDataField("agent_full_name", "Last", "URLParam", ""); }, paramName: "agent_full_name", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("brand", "Last", "URLParam", ""); }, paramName: "brand", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("calling_page", "Last", "JavascriptDataLayer", "location.hostname + location.pathname"); }, paramName: "calling_page", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("client_id", "Last", "URLParam", ""); }, paramName: "client_id", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("customer_id", "Last", "URLParam", ""); }, paramName: "customer_id", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("disposition", "Last", "URLParam", ""); }, paramName: "disposition", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("div_lookup_key", "Last", "URLParam", ""); }, paramName: "div_lookup_key", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("div_routeto_number", "Last", "URLParam", ""); }, paramName: "div_routeto_number", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("div_zips", "Last", "URLParam", ""); }, paramName: "div_zips", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("gbraid", "Last", "URLParam", ""); }, paramName: "gbraid", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("gclid", "Last", "URLParam", ""); }, paramName: "gclid", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("google_analytics_id", "Last", "JavascriptDataLayer", "ga.getAll()[0].get('trackingId')"); }, paramName: "google_analytics_id", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("landing_page", "First", "JavascriptDataLayer", "location.href"); }, paramName: "landing_page", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("location", "Last", "URLParam", ""); }, paramName: "location", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("lookup_number", "Last", "URLParam", ""); }, paramName: "lookup_number", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("lp_source", "Last", "URLParam", ""); }, paramName: "lp_source", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("lp_subsource", "Last", "URLParam", ""); }, paramName: "lp_subsource", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("msclkid", "Last", "URLParam", ""); }, paramName: "msclkid", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("national_verify_zip", "Last", "URLParam", ""); }, paramName: "national_verify_zip", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("posthog_api_key", "Last", "URLParam", ""); }, paramName: "posthog_api_key", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("posthog_distinct_id", "Last", "JavascriptDataLayer", "posthog.get_distinct_id()"); }, paramName: "posthog_distinct_id", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("product", "Last", "URLParam", ""); }, paramName: "product", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("profile_name", "Unique", "URLParam", ""); }, paramName: "profile_name", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("rc_dynamic_lookup", "Last", "URLParam", ""); }, paramName: "rc_dynamic_lookup", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("rc_dynamic_table_destination", "Last", "URLParam", ""); }, paramName: "rc_dynamic_table_destination", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("rc_routing_number", "Last", "URLParam", ""); }, paramName: "rc_routing_number", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("renuity_customer_id", "Last", "JavascriptDataLayer", "renuityTracker.getClientId()"); }, paramName: "renuity_customer_id", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("renuity_marketing_id", "Last", "URLParam", "rzid"); }, paramName: "renuity_marketing_id", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("ren_lookup_key", "Last", "URLParam", ""); }, paramName: "ren_lookup_key", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("reviewed_by", "Unique", "URLParam", ""); }, paramName: "reviewed_by", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("set_srs_id", "Last", "URLParam", ""); }, paramName: "set_srs_id", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("srs_id", "Last", "URLParam", ""); }, paramName: "srs_id", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("user_id", "Last", "URLParam", ""); }, paramName: "user_id", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("utm_campaign", "Last", "URLParam", ""); }, paramName: "utm_campaign", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("utm_content", "Last", "URLParam", ""); }, paramName: "utm_content", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("utm_medium", "Last", "URLParam", ""); }, paramName: "utm_medium", fallbackValue: function() { return Invoca.PNAPI.currentPageSettings.poolParams.utm_medium || null; } },
+  { on: function() { return Invoca.Client.parseCustomDataField("utm_source", "Last", "URLParam", ""); }, paramName: "utm_source", fallbackValue: function() { return Invoca.PNAPI.currentPageSettings.poolParams.utm_source || null; } },
+  { on: function() { return Invoca.Client.parseCustomDataField("website_entry_zip", "Last", "Cookie", "visitor_zip"); }, paramName: "website_entry_zip", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("wits_brand_lookup", "Last", "URLParam", ""); }, paramName: "wits_brand_lookup", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("wits_input_zip_code", "Last", "URLParam", ""); }, paramName: "wits_input_zip_code", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("wits_marketing_medium_lookup", "Last", "URLParam", ""); }, paramName: "wits_marketing_medium_lookup", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("wits_routeto_number", "Last", "URLParam", ""); }, paramName: "wits_routeto_number", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("zip", "Last", "URLParam", ""); }, paramName: "zip", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("zip_code_destination", "Last", "URLParam", ""); }, paramName: "zip_code_destination", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("zip_lens", "Last", "URLParam", ""); }, paramName: "zip_lens", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("zip_verified", "Last", "URLParam", ""); }, paramName: "zip_verified", fallbackValue: null }
+];
+
+var customDataWaitForConfigAnonymousFunctions = [
+  { on: function() { return Invoca.Client.parseCustomDataField("calling_page", "Last", "JavascriptDataLayer", function() { return (location.hostname + location.pathname); }) }, paramName: "calling_page", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("google_analytics_id", "Last", "JavascriptDataLayer", function() { return (ga.getAll()[0].get('trackingId')); }) }, paramName: "google_analytics_id", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("landing_page", "First", "JavascriptDataLayer", function() { return (location.href); }) }, paramName: "landing_page", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("posthog_distinct_id", "Last", "JavascriptDataLayer", function() { return (posthog.get_distinct_id()); }) }, paramName: "posthog_distinct_id", fallbackValue: null },
+  { on: function() { return Invoca.Client.parseCustomDataField("renuity_customer_id", "Last", "JavascriptDataLayer", function() { return (renuityTracker.getClientId()); }) }, paramName: "renuity_customer_id", fallbackValue: null }
+];
+
+var defaultCampaignId = null;
+
+var destinationSettings = {
+  paramName: null
+};
+
+var numbersToReplace = {
+  "+17819269871": "8583252",
+  "+17819269427": "8583254"
+};
+
+var organicSources = true;
+
+var reRunAfter = null;
+
+var requiredParams = null;
+
+var resetCacheOn = ['gclid', 'utm_source', 'utm_medium'];
+
+var waitFor = 0;
+
+var customCodeIsSet = (function() {
+  Invoca.Client.customCode = function(options) {
+    options.integrations.googleAnalytics = true;
+options.destinationSettings.paramName = "invoca_detected_destination";
+// pass msclkid value in gclid param.
+if(Invoca.Tools.readUrl("msclkid")){
+    options.poolParams = Invoca.PNAPI.extend({}, options.poolParams,{
+      gclid: Invoca.Tools.readUrl("msclkid")
+    });
+}
+return options;
+  };
+
+  return true;
+})();
+
+var generatedOptions = {
+  active:              true,
+  autoSwap:            false,
+  cookieDays:          cacheLifetimeDays,
+  country:             null,
+  dataSilo:            "us",
+  defaultCampaignId:   defaultCampaignId,
+  destinationSettings: destinationSettings,
+  disableUrlParams:    [],
+  doNotSwap:           [],
+  integrations:        automaticIntegrations,
+  maxWaitFor:          waitFor,
+  networkId:           networkId || null,
+  numberToReplace:     numbersToReplace,
+  organicSources:      organicSources,
+  poolParams:          {},
+  reRunAfter:          reRunAfter,
+  requiredParams:      requiredParams,
+  resetCacheOn:        resetCacheOn,
+  waitForData:         customDataWaitForConfig,
+  waitForDataAnonymousFunctions:  customDataWaitForConfigAnonymousFunctions
+};
+
+Invoca.Client.startFromWizard(generatedOptions);
+
+})(2102);

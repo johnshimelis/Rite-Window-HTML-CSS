@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Header with Hero Section</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="container">
+      <!-- Logo -->
+      <div class="logo">
+        <img src="./images/rite-window1.png" alt="Logo">
+      </div>
+
+      <!-- Desktop Navigation -->
+      <ul class="nav-items">
+        <li><a href="#window">WINDOW</a></li>
+        <li><a href="#doors">DOORS</a></li>
+      </ul>
+
+      <!-- Desktop Contact Button -->
+      <a href="tel:7819269427" class="contact-btn desktop-contact">
+         Get Quote
+      </a>
+
+      <!-- Mobile Menu Icon -->
+      <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#window">WINDOW</a>
+      <a href="#doors">DOORS</a>
+      <!-- Mobile Contact Button -->
+      <a href="tel:7819269427" class="contact-btn mobile-contact-btn">
+        Get Quote
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <div class="overlay"></div>
+      <div class="content">
+        <!-- Left Side Content -->
+        <div class="left-content">
+          <h1 class="hero-title">Replacement Windows</h1>
+          <p class="hero-subtitle">Upgrade Your Home's Efficiency with Premium Replacement Windows</p>
+          <div class="hero-badges">
+            <img src="./images/super.png" alt="Super Service" class="badge">
+            <img src="./images/BBB.webp" alt="BBB Accredited" class="badge">
+            <img src="./images/warranty.webp" alt="Warranty Certified" class="badge">
+          </div>
+        </div>
+
+        <!-- Right Side Content -->
+        <div class="right-content">
+          <h2>SAVE UP TO THOUSANDS OFF YOUR PROJECT</h2>
+          <p class="offer-details">18 months no interest no payments</p>
+          <p class="offer-expiry">Offer expires 1/31/25</p>
+          <form class="form">
+            <input type="text" placeholder="First Name *" class="form-input">
+            <input type="text" placeholder="Last Name *" class="form-input">
+            <input type="email" placeholder="Email *" class="form-input">
+            <input type="tel" placeholder="Phone Number *" class="form-input">
+            <textarea placeholder="Project Description" class="form-textarea"></textarea>
+            <div class="form-checkbox">
+              <input type="checkbox" id="consent">
+              <label for="consent">
+                By clicking "Get Free Pricing," you are authorizing Rite Window to deliver telemarketing promotions for home improvement products or services by email or by using an automatic telephone dialing system...
+              </label>
+            </div>
+            <button type="submit" class="form-button">Get Free Pricing</button>
+          </form>
+          <div class="footer-links">
+            <a href="#terms">Terms & Conditions</a>
+            <span>|</span>
+            <a href="#privacy">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="set-us-apart">
+    <div class="container">
+      <!-- Title -->
+      <h1 class="title">WHAT SETS US APART?</h1>
+      <!-- Divider -->
+      <div class="sets-divider">
+        <img
+          width="253"
+          height="15"
+          alt=""
+          src="./images/divider.svg"
+        />
+      </div>
+      <!-- Cards Section -->
+      <div class="cards">
+        <!-- Card 1 -->
+        <div class="card">
+          <div class="card-image">
+            <img
+              class="icon"
+              title="projects"
+              alt="projects"
+              src="./images/set1.png"
+            />
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">50,000+</h3>
+            <p class="card-text">PROJECTS COMPLETED</p>
+          </div>
+        </div>
+  
+        <!-- Card 2 -->
+        <div class="card">
+          <div class="card-image">
+            <img
+              class="icon"
+              title="20yrs"
+              alt="20yrs"
+              src="./images/set2.png"
+            />
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">20</h3>
+            <p class="card-text">YEARS IN BUSINESS</p>
+          </div>
+        </div>
+  
+        <!-- Card 3 -->
+        <div class="card">
+          <div class="card-image">
+            <img
+              class="icon"
+              title="customers"
+              alt="customers"
+              src="./images/set3.png"
+            />
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">40,000+</h3>
+            <p class="card-text">HAPPY CUSTOMERS</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+<!-- Steps -->
+
+
+<section class="steps-section">
+    <div class="steps-container">
+      <h1 class="steps-heading">
+        You’re just a few steps away from a stunning renovation!
+      </h1>
+      <div class="steps-divider">
+        <img src="./images/divider1.svg"  alt="Divider" />
+      </div>
+      <div class="steps-grid">
+        <div class="steps-item">
+          <div class="steps-icon-wrapper">
+            <div class="steps-icon">
+              <img src="./images/step1.png" alt="Free Customized Quote & Design Consult" />
+            </div>
+            <div class="steps-line"></div>
+          </div>
+          <div class="steps-content">
+            <h3 class="steps-title">Free Customized Quote & Design Consult</h3>
+            <p class="steps-description">
+              We make it easy to start your home renovation. One of our design experts will visit your home, take measurements of windows and doors, and provide a personalized quote free of charge.
+            </p>
+          </div>
+        </div>
+        <div class="steps-item">
+          <div class="steps-icon-wrapper">
+            <div class="steps-icon">
+              <img src="./images/step2.png" alt="Setting Your Installation Dates" />
+            </div>
+            <div class="steps-line"></div>
+          </div>
+          <div class="steps-content">
+            <h3 class="steps-title">Setting Your Installation Dates</h3>
+            <p class="steps-description">
+              Your time matters most, so we work around your schedule to ensure a hassle-free experience. Our team keeps you informed every step of the way, from delivery to installation.
+            </p>
+          </div>
+        </div>
+        <div class="steps-item">
+          <div class="steps-icon-wrapper">
+            <div class="steps-icon">
+              <img src="./images/step3.png" alt="Post-Installation Care & Warranty" />
+            </div>
+          </div>
+          <div class="steps-content">
+            <h3 class="steps-title">Post-Installation Care & Warranty</h3>
+            <p class="steps-description">
+              We won’t leave you hanging after installation. We clean up thoroughly and walk you through your new product to ensure it meets your expectations. Not to mention, our lifetime warranty and support team are just a call away for any future needs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Free Quote Section -->
+  <section class="free-quote-section">
+    <!-- Left Section -->
+    <div class="left-section">
+      <h2>LET'S GET YOU A FREE QUOTE</h2>
+      <div class="qoute-divider">
+        <img
+          src="./images/divider.svg"
+          alt="Divider"
+          width="253"
+          height="15"
+        />
+      </div>
+      <p>
+        Ready to start your next home remodeling project? Schedule a
+        no-obligation consultation with our experts today. We'll work with you
+        to design a solution that fits your needs, style, and budget.
+      </p>
+      <button class="free-quote-btn">SCHEDULE A FREE CONSULTATION</button>
+    </div>
+  
+    <!-- Right Section -->
+    <div class="right-section">
+      <img
+        src="https://ritewindow.com/wp-content/uploads/2024/09/image-20240913-183355-1.png"
+        alt="Window with flowers"
+      />
+    </div>
+  </section>
+
+<!-- Our Locations Section -->
+<section class="our-locations">
+    <div class="container">
+      <!-- Header -->
+      <h1 class="location-title">OUR LOCATIONS</h1>
+      <!-- Divider -->
+      <div class="our-divider">
+        <img
+        src="./images/divider1.svg"
+          alt="Divider Icon"
+        />
+      </div>
+      <!-- Locations -->
+      <div class="locations-grid">
+        <div class="location-card">
+          <img
+            src="https://ritewindow.com/wp-content/uploads/elementor/thumbs/Vector-qv0mt4rpcpino3o454i7ofbyo2qvrnf0lrk4s1e5b6.png"
+            alt="Massachusetts"
+          />
+          <p class="location-name">Massachusetts</p>
+        </div>
+        <div class="location-card">
+          <img
+            src="https://ritewindow.com/wp-content/uploads/elementor/thumbs/Vector-1-qv0mt4rome97n0flrb808kduq6hklp15dc0nd99qsk.png"
+            alt="New Hampshire"
+          />
+          <p class="location-name">New Hampshire</p>
+        </div>
+        <div class="location-card">
+          <img
+            src="https://ritewindow.com/wp-content/uploads/elementor/thumbs/Vector-2-qv0mt4rp326t949z9sbhrtjbr7r6n8aww0ljmtg1te.png"
+            alt="Connecticut"
+          />
+          <p class="location-name">Connecticut</p>
+        </div>
+        <div class="location-card">
+          <img
+            src="https://ritewindow.com/wp-content/uploads/elementor/thumbs/Group-374-qv0msl12z5k7d5zpgrkggk7t7rvqf003hgzm55v3ci.png"
+            alt="Rhode Island"
+          />
+          <p class="location-name">Rhode Island</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Customers Section -->
+
+  <section class="customer-section">
+    <div class="customer-container">
+      <!-- Left Content -->
+      <div class="customer-left">
+        <h1 class="customer-title">WHAT OUR<br />CUSTOMERS SAY</h1>
+        <div class="customer-stars">
+          <img src="https://cdn.trustindex.io/assets/platform/Google/star/f.svg" alt="Star" />
+          <img src="https://cdn.trustindex.io/assets/platform/Google/star/f.svg" alt="Star" />
+          <img src="https://cdn.trustindex.io/assets/platform/Google/star/f.svg" alt="Star" />
+          <img src="https://cdn.trustindex.io/assets/platform/Google/star/f.svg" alt="Star" />
+          <img src="https://cdn.trustindex.io/assets/platform/Google/star/f.svg" alt="Star" />
+        </div>
+        <p class="customer-read-more">Read more reviews:</p>
+      </div>
+  
+      <!-- Right Content -->
+      <div class="customer-slider">
+        <div class="slider-track">
+          <div class="customer-card">
+            <img
+            src="./images/google.svg"
+              alt="Google Icon"
+              class="google-icon"
+            />
+            <h3>Kevin Moore</h3>
+            <p class="date">7 months ago</p>
+            <div class="stars">
+              <img src="https://cdn.trustindex.io/assets/platform/Google/star/f.svg" alt="Star" />
+              <img src="https://cdn.trustindex.io/assets/platform/Google/star/f.svg" alt="Star" />
+              <img src="https://cdn.trustindex.io/assets/platform/Google/star/f.svg" alt="Star" />
+              <img src="https://cdn.trustindex.io/assets/platform/Google/star/f.svg" alt="Star" />
+              <img src="https://cdn.trustindex.io/assets/platform/Google/star/f.svg" alt="Star" />
+            </div>
+            <p class="review">
+              Rite window is incredible. One of the best investments my wife and I made...
+            </p>
+            <a href="#" class="read-more">Read more</a>
+          </div>
+  
+          <div class="customer-card">
+            <img
+            src="./images/google.svg"
+              alt="Google Icon"
+              class="google-icon"
+            />
+            <h3>Anne Rousseau</h3>
+            <p class="date">8 months ago</p>
+            <div class="stars">
+              <img src="https://cdn.trustindex.io/assets/platform/Google/star/f.svg" alt="Star" />
+              <img src="https://cdn.trustindex.io/assets/platform/Google/star/f.svg" alt="Star" />
+              <img src="https://cdn.trustindex.io/assets/platform/Google/star/f.svg" alt="Star" />
+              <img src="https://cdn.trustindex.io/assets/platform/Google/star/f.svg" alt="Star" />
+              <img src="https://cdn.trustindex.io/assets/platform/Google/star/f.svg" alt="Star" />
+            </div>
+            <p class="review">
+              I had 10 windows replaced. The installation team was outstanding...
+            </p>
+            <a href="#" class="read-more">Read more</a>
+          </div>
+  
+          <div class="customer-card">
+            <img
+              src="./images/google.svg"
+              alt="Google Icon"
+              class="google-icon"
+            />
+            <h3>Emma Wilson</h3>
+            <p class="date">1 month ago</p>
+            <div class="stars">
+              <img src="https://cdn.trustindex.io/assets/platform/Google/star/f.svg" alt="Star" />
+              <img src="https://cdn.trustindex.io/assets/platform/Google/star/f.svg" alt="Star" />
+              <img src="https://cdn.trustindex.io/assets/platform/Google/star/f.svg" alt="Star" />
+              <img src="https://cdn.trustindex.io/assets/platform/Google/star/f.svg" alt="Star" />
+              <img src="https://cdn.trustindex.io/assets/platform/Google/star/f.svg" alt="Star" />
+            </div>
+            <p class="review">
+              The bathroom remodel results were incredible. Professional and efficient!
+            </p>
+            <a href="#" class="read-more">Read more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rite Window -->
+
+  <section class="delighting-container">
+    <!-- Left Section -->
+    <div class="delighting-left">
+      <h2>
+        Rite Window - Delighting our Customers with Exceptional Products,
+        Professionally Installed, for the Right Price
+      </h2>
+      <div class="rite-divider">
+        <img
+        src="./images/divider.svg"
+          width="253"
+          height="15"
+        />
+      </div>
+      <p>
+        Rite Window makes it easy and affordable for you to upgrade your windows,
+        doors, Kohler showers or baths. In addition to installing home
+        improvement products that make your home more attractive and energy
+        efficient, we focus on quality! We complete our work quickly and stay
+        within your budget, no matter what type of project you have in mind!
+      </p>
+      <a href="/" class="know-more">KNOW MORE</a>
+    </div>
+  
+    <!-- Right Section -->
+    <div class="delighting-right">
+      <img
+        src="/images/window1.jpeg"
+        alt="Window with flowers"
+      />
+    </div>
+  </section>
+  
+  <!-- Partner Section -->
+
+  <section class="our-partners">
+    <h2 class="partners-title">OUR TRUSTED PARTNERS</h2>
+    <div class="partner-divider">
+      <img
+      src="./images/divider1.svg"
+        alt="divider"
+      />
+    </div>
+    <div class="partners-grid">
+      <div class="partner-item">
+        <img
+        src="./images/partner1.webp"
+          alt="Angie's List Super Service Award"
+        />
+      </div>
+      <div class="partner-item">
+        <img
+        src="./images/partner2.webp"
+          alt="BBB Rating A+"
+        />
+      </div>
+      <div class="partner-item">
+        <img
+        src="./images/partner3.webp"
+          alt="Guildmaster Award"
+        />
+      </div>
+      <div class="partner-item">
+        <img
+        src="./images/partner4.webp"
+          alt="EPA Certified Firm"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+
+  <section class="footer-section">
+    <footer class="bg-gray-200 py-28">
+      <div class="footer-container">
+        <!-- Logo Section -->
+        <div class="footer-logo-section">
+          <img
+            src="https://cdn-jijcf.nitrocdn.com/XBJDJfCxYCPsGtNzapqaiXHhnvnkwOpu/assets/images/optimized/rev-f3cdeea/ritewindow.com/wp-content/uploads/2024/08/logo.png"
+            alt="Logo"
+            class="footer-logo"
+          />
+            <p>
+              <a href="tel:7819269427" class="contact-info">
+                    <a href="/get-quote" class="quote-link">GET QUOTE</a>
+              </a>
+            </p>
+        </div>
+  
+        <!-- Links Section -->
+        <div class="footer-links">
+          <div class="footer-column">
+         
+          </div>
+          <div class="footer-column">
+            <h4 class="footer-column-title">CONTACT US</h4>
+            <ul>
+              <li><a href="/about-us">About Us</a></li>
+              <li><a href="/offers">Offers</a></li>
+              <li><a href="/reviews">Reviews</a></li>
+              <li><a href="/careers">Careers</a></li>
+ 
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </section>
+  
+  <!-- Our Location -->
+  <section class="our-location">
+    <div class="our-location-container">
+      <h2 class="location-heading">OUR LOCATIONS</h2>
+      <div class="divider">
+        <img
+        src="./images/divider1.svg"
+          alt="Divider"
+          width="253"
+          height="15"
+        />
+      </div>
+      <div class="location-grid">
+        <div class="location-item">
+          <h3>WOBURN</h3>
+          <p class="address">7 Roessler Rd.</p>
+          <p class="city">Woburn, MA, 01801</p>
+        </div>
+        <div class="location-item">
+          <h3>PLAINVILLE</h3>
+          <p class="address">109 Washington St.</p>
+          <p class="city">Plainville, MA, 02762</p>
+        </div>
+        <div class="location-item">
+          <h3>EXETER</h3>
+          <p class="address">41 Industrial Dr. #9</p>
+          <p class="city">Exeter, NH, 03833</p>
+        </div>
+        <div class="location-item">
+          <h3>CONNECTICUT</h3>
+          <p class="address">800 Marshall Phelps Rd Building 4</p>
+          <p class="city">Windsor, CT</p>
+        </div>
+      </div>
+      <div class="social-icons">
+        <a href="#" class="social-icon facebook"></a>
+        <a href="#" class="social-icon instagram"></a>
+        <a href="#" class="social-icon youtube"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Copyright Section -->
+
+  <section class="copyright-section">
+    <div class="copyright-container">
+      <div class="copyright-top">
+        <div class="copyright-left">
+          <p>Copyright © 2024 Rite Window. All Rights Reserved.</p>
+        </div>
+        <div class="copyright-right">
+          <a href="#terms" class="copyright-link">Terms & Conditions</a> |
+          <a href="#privacy" class="copyright-link">Privacy Policy</a>
+        </div>
+      </div>
+      <div class="copyright-bottom">
+        <p>
+          MHIC #138722 | CT HIC #0669113 | RI GC-34045 | NH ID 459494 | VT
+          174.0000357 | ME #OCR16055
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  
+  <script src="script.js"></script>
+</body>
+</html>
